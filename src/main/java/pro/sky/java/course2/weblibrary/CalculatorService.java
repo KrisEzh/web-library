@@ -4,29 +4,33 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorService {
-    static int value1 = 5;
-    static int value2 = 5;
 
-    public static String plus() {
+    public String plus(int value1, int value2) {
         int num3 = value1 + value2;
         return String.valueOf(num3);
     }
 
-    public static String minus() {
+    public  String minus(int value1, int value2) {
         int num3 = value1 - value2;
         return String.valueOf(num3);
     }
 
-    public static String multiply() {
+    public  String multiply(int value1, int value2) {
         int num3 = value1 * value2;
         return String.valueOf(num3);
     }
 
-    public static String divide() {
+    public  String divide(int value1, int value2) throws IllegalArgumentException {
+        if (value2 == 0) {
+            throw new IllegalArgumentException();
+        } else {
             int num3 = value1 / value2;
             return String.valueOf(num3);
         }
     }
+
+}
+
 
 
 
